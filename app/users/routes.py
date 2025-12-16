@@ -26,6 +26,7 @@ async def read_user(username: str):
     user = get_user(username)
     if user:
         return user
+
     return {"error": "User not found"}
 
 
@@ -36,4 +37,5 @@ async def delete_user(username: str):
     success = remove_user(username)
     if success:
         return {"message": "User deleted"}
+
     return {"error": "User not found"}

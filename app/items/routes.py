@@ -19,6 +19,7 @@ async def read_item(item_name: str):
     item = get_item(item_name)
     if item:
         return item
+
     return {"error": "Item not found"}
 
 
@@ -27,6 +28,7 @@ async def create_item(item: Item):
     """Creates a new item and returns the created item."""
 
     added_item = add_item(item)
+
     return added_item
 
 
@@ -37,4 +39,5 @@ async def delete_item(item_name: str):
     success = remove_item(item_name)
     if success:
         return {"message": "Item deleted"}
+
     return {"error": "Item not found"}

@@ -10,6 +10,7 @@ async def register_user(user: UserRegister):
     success = register(user)
     if success:
         return {"message": "User registered successfully"}
+
     return {"message": "Registration failed"}
 
 
@@ -17,6 +18,14 @@ async def register_user(user: UserRegister):
 async def login_user(user: UserLogin, response: Response):
     token = login(user)
     if token:
-        response.set_cookie(key="token", value=token)
+        response.set_cookie(
+            key="token",
+            value=token,
+            httponly=True,
+            secure=True,
+            samesite="strict",
+        )
+
         return {"message": "Login successful"}
+
     return {"message": "Invalid credentials"}
