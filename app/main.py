@@ -12,5 +12,5 @@ api_router.include_router(items_router)
 api_router.include_router(users_router)
 api_router.include_router(auth_router)
 
-# run server
+# centralized router
 app.include_router(api_router)
