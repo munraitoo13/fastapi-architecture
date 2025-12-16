@@ -28,6 +28,5 @@ The `/app/auth` module contains the building blocks for a token-based authentica
 The following are deliberate design choices made to keep the demonstration focused on architecture:
 
 -   **In-Memory Database:** The repository layer uses a simple Python `list` as a "database" (`database/database.py`). This avoids the need for a real database setup, allowing one to focus purely on the application code structure.
--   **Disconnected Auth Endpoints:** The `register` and `login` endpoints are fully defined in `auth/routes.py` but are **intentionally not connected** to the main FastAPI app in `main.py`. This serves to demonstrate how the authentication routes and services are structured in isolation.
 -   **No Active Route Protection:** While the login endpoint can generate a JWT, no API routes are configured to require this token for access. This isolates the demonstration of token *creation* from the concept of token *validation* and route protection.
 
