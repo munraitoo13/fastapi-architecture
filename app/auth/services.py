@@ -40,6 +40,7 @@ def login(user: UserLogin) -> str | None:
             payload = {
                 "sub": user.username,
                 "exp": datetime.datetime.now() + datetime.timedelta(hours=int(exp)),
+                "iat": datetime.datetime.now(),
             }
 
             token = jwt.encode(
