@@ -2,7 +2,7 @@ from fastapi import APIRouter, Response
 from app.auth.services import register, login
 from app.auth.schemas import UserLogin, UserRegister
 
-auth_router = APIRouter()
+auth_router = APIRouter(prefix="/auth")
 
 
 @auth_router.post("/register")

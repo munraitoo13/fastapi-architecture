@@ -25,7 +25,7 @@ def register(user: UserRegister) -> bool:
     return created_user is not None
 
 
-def login(user: UserLogin) -> jwt.types.JWTType:
+def login(user: UserLogin) -> str | None:
     existing_user = get_user(user.username)
 
     if existing_user:
